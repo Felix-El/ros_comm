@@ -32,11 +32,6 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  */
 
-// Make sure we use CLOCK_MONOTONIC for the condition variable wait_for if not Apple.
-#ifndef __APPLE__
-#define BOOST_THREAD_HAS_CONDATTR_SET_CLOCK_MONOTONIC
-#endif
-
 #include "ros/callback_queue.h"
 #include "ros/assert.h"
 #include <boost/scope_exit.hpp>
