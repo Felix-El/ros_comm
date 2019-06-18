@@ -172,8 +172,9 @@ bool SubscriptionQueue::ready()
   if (!allow_concurrent_callbacks_) {
     boost::recursive_mutex::scoped_try_lock lock(callback_mutex_, boost::try_to_lock);
     return lock.owns_lock();
-  } else
+  } else {
     return true;
+  }
 }
 
 bool SubscriptionQueue::full()
